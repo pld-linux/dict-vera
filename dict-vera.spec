@@ -3,7 +3,7 @@ Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
 Summary(pl):	S³ownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
 Version:	1.9
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
