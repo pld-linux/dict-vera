@@ -16,11 +16,11 @@ Requires:	%{_sysconfdir}/dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package contains V.E.R.A, version %version, formatted for use by
+This package contains V.E.R.A, version %{version}, formatted for use by
 the dictionary server in the dictd package.
 
 %description -l pl
-Ten pakiet zawiera s這wnik V.E.R.A w wersji %version, sformatowany do
+Ten pakiet zawiera s這wnik V.E.R.A w wersji %{version}, sformatowany do
 u篡tku z serwerem s這wnika dictd.
 
 %prep
@@ -29,7 +29,7 @@ u篡tku z serwerem s這wnika dictd.
 %build
 perl -ne 's/\@item (.*)\n/:$1:\n/; print unless /^@/' vera.? | \
 	dictfmt -j -u http://home.snafu.de/ohei/ -s \
-	"V.E.R.A. -- Virtual Entity of Relevant Acronyms (%version)" %{dictname}
+	"V.E.R.A. -- Virtual Entity of Relevant Acronyms (%{version})" %{dictname}
 dictzip %{dictname}.dict
 
 %install
