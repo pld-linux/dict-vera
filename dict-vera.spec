@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
+# Source0-md5:	ed6120dd9739c71580a92868a34776b0
 URL:		http://www.dict.org/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
