@@ -27,7 +27,7 @@ u¿ytku z serwerem s³ownika dictd.
 
 %build
 perl -ne 's/\@item (.*)\n/:$1:\n/; print unless /^@/' vera.? | \
-	dictfmt -j -u http://home.snafu.de/ohei/FTP -s \
+	dictfmt -j -u http://home.snafu.de/ohei/ -s \
 	"V.E.R.A. -- Virtual Entity of Relevant Acronyms (%version)" %{dictname}
 dictzip %{dictname}.dict
 
