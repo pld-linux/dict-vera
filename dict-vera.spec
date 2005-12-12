@@ -11,17 +11,17 @@ Source0:	ftp://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
 URL:		http://www.dict.org/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package contains V.E.R.A, version %{version}, formatted for use by
-the dictionary server in the dictd package.
+This package contains V.E.R.A, version %{version}, formatted for use
+by the dictionary server in the dictd package.
 
 %description -l pl
-Ten pakiet zawiera s這wnik V.E.R.A w wersji %{version}, sformatowany do
-u篡tku z serwerem s這wnika dictd.
+Ten pakiet zawiera s這wnik V.E.R.A w wersji %{version}, sformatowany
+do u篡tku z serwerem s這wnika dictd.
 
 %prep
 %setup -q -n %{dictname}-%{version}
@@ -60,5 +60,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc README vera.texi
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}.dictconf
 %{_datadir}/dictd/%{dictname}.*
