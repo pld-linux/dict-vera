@@ -1,6 +1,6 @@
 %define		dictname vera
 Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
-Summary(pl):	S≥ownik Virtual Entity of Relevant Acronyms dla dictd
+Summary(pl.UTF-8):   S≈Çownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
 Version:	1.9
 Release:	3
@@ -19,9 +19,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package contains V.E.R.A, version %{version}, formatted for use
 by the dictionary server in the dictd package.
 
-%description -l pl
-Ten pakiet zawiera s≥ownik V.E.R.A w wersji %{version}, sformatowany
-do uøytku z serwerem s≥ownika dictd.
+%description -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik V.E.R.A w wersji %{version}, sformatowany
+do u≈ºytku z serwerem s≈Çownika dictd.
 
 %prep
 %setup -q -n %{dictname}-%{version}
