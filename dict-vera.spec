@@ -1,6 +1,6 @@
 %define		dictname vera
 Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
-Summary(pl.UTF-8):   Słownik Virtual Entity of Relevant Acronyms dla dictd
+Summary(pl.UTF-8):	Słownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
 Version:	1.9
 Release:	3
