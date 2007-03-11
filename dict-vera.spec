@@ -3,7 +3,7 @@ Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
 Summary(pl.UTF-8):	Słownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
 Version:	1.9
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
@@ -11,6 +11,7 @@ Source0:	ftp://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
 URL:		http://www.dict.org/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,13 +49,11 @@ mv %{dictname}.{dict.dz,index} $RPM_BUILD_ROOT%{_datadir}/dictd
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
+%service -q dictd restart
 
 %postun
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2 || true
+if [ "$1" = 0 ]; then
+	%service -q dictd restart
 fi
 
 %files
