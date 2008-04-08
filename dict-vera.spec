@@ -6,7 +6,7 @@ Version:	1.17
 Release:	1
 License:	GPL
 Group:		Applications/Dictionaries
-Source0:	ftp://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
 # Source0-md5:	3e8f048295ceb66a8ac0aaeb36166979
 URL:		http://www.dict.org/
 BuildRequires:	dictfmt
