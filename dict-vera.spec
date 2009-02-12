@@ -2,13 +2,13 @@
 Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
 Summary(pl.UTF-8):	Słownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
-Version:	1.17
+Version:	1.19
 Release:	1
 License:	GPL
 Group:		Applications/Dictionaries
-Source0:	http://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
-# Source0-md5:	3e8f048295ceb66a8ac0aaeb36166979
-URL:		http://www.dict.org/
+Source0:	http://home.snafu.de/ohei/FTP/%{dictname}-%{version}.tar.gz
+# Source0-md5:	1ca915d0ecd4617c54379f79e1b67914
+URL:		http://home.snafu.de/ohei/vera/vueber-e.html
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
 BuildRequires:	rpmbuild(macros) >= 1.268
