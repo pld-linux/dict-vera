@@ -2,15 +2,16 @@
 Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
 Summary(pl.UTF-8):	Słownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
-Version:	1.19
+Version:	1.21
 Release:	1
-License:	GPL
+License:	FDL v1.1+
 Group:		Applications/Dictionaries
-Source0:	http://home.snafu.de/ohei/FTP/%{dictname}-%{version}.tar.gz
-# Source0-md5:	1ca915d0ecd4617c54379f79e1b67914
+Source0:	http://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
+# Source0-md5:	b3ac74d4f5336512996142fc00e3e144
 URL:		http://home.snafu.de/ohei/vera/vueber-e.html
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
+BuildRequires:	perl-base
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -28,7 +29,7 @@ do użytku z serwerem słownika dictd.
 %setup -q -n %{dictname}-%{version}
 
 %build
-perl -ne 's/\@item (.*)\n/:$1:\n/; print unless /^@/' vera.? | \
+%{__perl} -ne 's/\@item (.*)\n/:$1:\n/; print unless /^@/' vera.? | \
 	dictfmt -j -u http://home.snafu.de/ohei/ -s \
 	"V.E.R.A. -- Virtual Entity of Relevant Acronyms (%{version})" %{dictname}
 dictzip %{dictname}.dict
@@ -43,7 +44,7 @@ database %{dictname} {
 	data  \"$dictprefix.dict.dz\"
 	index \"$dictprefix.index\"
 }" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}.dictconf
-mv %{dictname}.{dict.dz,index} $RPM_BUILD_ROOT%{_datadir}/dictd
+cp -p %{dictname}.{dict.dz,index} $RPM_BUILD_ROOT%{_datadir}/dictd
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,6 +59,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc README vera.texi
+%doc README
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}.dictconf
 %{_datadir}/dictd/%{dictname}.*
