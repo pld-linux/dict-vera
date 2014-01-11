@@ -2,12 +2,12 @@
 Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
 Summary(pl.UTF-8):	Słownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
-Version:	1.21
+Version:	1.21a
 Release:	1
-License:	FDL v1.1+
+License:	FDL v1.3+
 Group:		Applications/Dictionaries
 Source0:	http://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
-# Source0-md5:	b3ac74d4f5336512996142fc00e3e144
+# Source0-md5:	9004056a56a34529fcdb7571f41772d9
 URL:		http://home.snafu.de/ohei/vera/vueber-e.html
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
@@ -59,6 +59,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc README changelog
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}.dictconf
 %{_datadir}/dictd/%{dictname}.*
