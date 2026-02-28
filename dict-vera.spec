@@ -3,7 +3,7 @@ Summary:	Virtual Entity of Relevant Acronyms dictionary for dictd
 Summary(pl.UTF-8):	Słownik Virtual Entity of Relevant Acronyms dla dictd
 Name:		dict-%{dictname}
 Version:	1.24
-Release:	1
+Release:	2
 License:	FDL v1.3+
 Group:		Applications/Dictionaries
 Source0:	https://ftp.gnu.org/gnu/vera/%{dictname}-%{version}.tar.gz
